@@ -2,8 +2,15 @@
   <h1>Welcome to Viewing Party</h1>
 </section>
 
-<section id="new-user">
-  <p><%= button_to 'Register', '/register', method: :get, class: "btn btn-primary" %><p>
+<section class="container">
+  <section class="row">
+    <section class="col-6">
+      <p><%= button_to 'Register', '/register', method: :get, class: "btn btn-primary" %><p>
+    </section>
+    <section class="col-5">
+      <p><%= button_to 'Sign Up With Google', '/auth/google_oauth2', method: :get, class: "btn btn-primary" %><p>
+    </section>
+  </section>
 </section>
 
 <section id="users">

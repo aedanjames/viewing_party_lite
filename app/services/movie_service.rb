@@ -3,7 +3,7 @@ class MovieService
   def self.get_url(url, param = nil)
     conn = Faraday.new(url: "https://api.themoviedb.org/3/") do |faraday|
       faraday.params[:api_key] = ENV['movie_api_key']
- 
+
       faraday.params[:query] = param unless param == nil
     end
 
@@ -21,7 +21,7 @@ class MovieService
 
   def self.movie_details(movie_id)
     get_url("movie/#{movie_id}")
-  end 
+  end
 
   def self.get_cast(movie_id)
     get_url("movie/#{movie_id}/credits")[:cast]

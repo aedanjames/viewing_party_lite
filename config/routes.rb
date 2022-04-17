@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   post 'movies/:id/viewing_party/new', to: 'viewing_party#create'
 
   get '/dashboard', to: 'users#show'
-  
+
+  # get '/auth/google_oauth2', to: 'users#authenticate_user_google'
+  get '/auth/google_oauth2/callback', to: 'users#authenticate_user_google'
 
   resources :users, only: [:new, :create]
   resources :movies, only: [:index, :show], controller: :users_movies

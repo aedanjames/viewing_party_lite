@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def login
-  end 
+  end
 
   def logout
     session[:user_id] = nil 
@@ -45,6 +45,20 @@ class UsersController < ApplicationController
       redirect_to dashboard_path
     else 
       redirect_to '/login', alert: 'Invalid email/password'
+    end
+  end
+
+  def authenticate_user_google
+    auth_hash = request.env['omniauth.auth']
+    user_email = auth_hash[:info][:email]
+    user = User.find_or_create_by(name: auth_hash[:info][:name], email: user_email, password_digest: auth_hash[:extra][:id_token])
+    if user
+      session[:access_token] = auth_hash[:credentials][:token]
+      user = User.find_by(email: auth_hash[:info][:email])
+      session[:user_id] = user.id
+      redirect_to dashboard_path
+    else 
+      redirect_to '/login', alert: 'Apologies, an error occured. Please register for an account'
     end 
   end 
 
