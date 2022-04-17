@@ -57,8 +57,7 @@ class UsersController < ApplicationController
       session[:access_token] = auth_hash[:credentials][:token]
       session[:user_id] = user.id
       redirect_to dashboard_path
-    else 
-      binding.pry
+    else
       user = User.create!(name: auth_hash[:info][:name], email: user_email, password: auth_hash[:extra][:id_token])
       session[:access_token] = auth_hash[:credentials][:token]
       session[:user_id] = user.id
