@@ -1,9 +1,9 @@
 <section id="title">
-  <h1> <%= @user.name %>'s Dashboard </h1>
+  <section class="p-4 mb-2 bg-dark text-white"><h1> <%= @user.name %>'s Dashboard </h1></section>
 </section>
 
 <section id="discover">
-  <p><%= button_to 'Discover Movies', "/discover", method: :get, class: "btn btn-info" %><p>
+  <p><%= button_to 'Discover Movies', "/discover", method: :get, class: "btn btn-primary" %><p>
 </section>
 
 <section id="parties">

@@ -14,6 +14,19 @@
  *= require_self
  */
 
+ #welcome_images {
+  width: 100vw;
+  color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 1rem;
+}
+
+.link img {
+  width: 30vw;
+  height: 20vw;
+}
+
  html, body {
 	background-image: image-url('/assets/background.jpg'); 
 	height: 100%;
@@ -23,6 +36,7 @@
 	background-position: bottom;
 	background-size: cover;
 	background-attachment: fixed;
+  font-family: fantasy, 'copperplate';
 }
 img {
   display: block;
@@ -31,4 +45,7 @@ img {
   width: 60%;
 }
 
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #6f42c1 !important;
+}
 

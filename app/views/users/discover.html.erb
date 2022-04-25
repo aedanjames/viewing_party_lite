@@ -1,15 +1,36 @@
 <section id="discover">
-<br>
-    <p>
-  <section class="mb-3">
+  <section class="mb-3, shadow-sm p-3 mb-5">
     <%= form_with url: "/movies", method: :get, local: true do |form| %>
       <%= form.label :search, 'Search For Movie', class: "form-label" %>
       <%= form.text_field :search %>
       <%= form.submit 'Search', class: "btn btn-primary" %>
     <% end %>
-    </p>
+  <p><%= button_to "Top Rated Movies", movies_path, method: :get, params: {top_rated: 'top_rated'}, class: "btn btn-primary" %><p>
     </section>
 
-  <p><%= button_to "Top Rated Movies", movies_path, method: :get, params: {top_rated: 'top_rated'}, class: "btn btn-info" %><p>
+<section class="p-4 mb-2 bg-dark text-white"><h3>Developer's Picks </h3></section>
+</section>
 
+<section class="container">
+  <section class="row align-items-start">
+    <section class="col">
+    <br>
+      <%= link_to "Death Proof", "/movies/1991", method: :get, class:"link-dark" %>
+      <img src="https://image.tmdb.org/t/p/original/vtu6H4NWnQVqEp3aanUq3hNeeot.jpg">
+    </section>
+  </section>
+  <section class="row align-items-center">
+    <section class="col">
+    <br>
+    <%= link_to "Gaia", "/movies/795853", method: :get, class:"link-dark" %>
+    <img src="https://image.tmdb.org/t/p/original/v8cwfPwjHDWf5s5MxvLvcfnxPLL.jpg">
+    </section>
+  </section>
+  <section class="row align-items-end">
+    <section class="col">
+    <br>
+            <%= link_to "The Platform", "/movies/619264", method: :get, class:"link-dark" %>
+      <img src="https://image.tmdb.org/t/p/original/8ZX18L5m6rH5viSYpRnTSbb9eXh.jpg">
+    </section>
+  </section>
 </section>

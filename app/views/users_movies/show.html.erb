@@ -1,45 +1,103 @@
 <br>
 <section id="buttons">
-  <p><%= button_to "Create Viewing Party for #{@movie.title}", "/movies/#{@movie.id}/viewing_party/new", method: :get, class: "btn btn-success" %><p>
-</section>
+  <p><%= button_to "Create Viewing Party for #{@movie.title}", "/movies/#{@movie.id}/viewing_party/new", method: :get, class: "btn btn-primary" %><p>
+</section><br>
 
 <section id="info">
   <h2><%= @movie.title %></h2>
+
   <p> <img src="https://image.tmdb.org/t/p/original<%= @movie.poster  %>"alt="">
-  <section class="p-3 mb-2 bg-light text-dark">
-    <p>Vote Average: <%= @movie.vote_average %></p>
-    <p>Runtime: <%= "#{@movie.runtime/60} hour(s) " "#{@movie.runtime%60} minutes" %></p>
-    <p>Genre(s): <% @movie.genre.each do |genre| %>
-                    <%= genre[:name] %>
-                <% end %>
-    </p>
-      <p>Summary: <%= @movie.summary %></p>
+
+  <section class="container">
+  <section class="row align-items-start">
+    <section class="col">
+      <section class="text-decoration-underline"><h4>Vote Average</h4></section>
+    </section>
+    <section class="col">
+      <section class="text-decoration-underline"><h4>Runtime</h4></section>
+    </section>
+    <section class="col">
+      <section class="text-decoration-underline"><h4>Genre(s)</h4></section>
+    </section>
+  </section>
+  <section class="row align-items-center">
+    <section class="col">
+      <strong><%= @movie.vote_average %></strong>
+    </section>
+    <section class="col">
+      <strong><%= "#{@movie.runtime/60} hour(s) " "#{@movie.runtime%60} minutes" %></strong>
+    </section>
+    <section class="col">
+      <% @movie.genre.each do |genre| %>
+        <%= genre[:name] %>,
+      <% end %>
+    </section>
+  </section>
+  
+    <section class="row align-items-end">
+      <section class="col">
+      <br><br>
+        <section class="text-decoration-underline"><h4>Summary</h4></section>
+        <%= @movie.summary %>
+      </section>
+    </section>
   </section>
 </section>
 
-<br>
 <section id="cast">
-  <h3>Cast</h3>
-  <% @cast.each do |person|%>
-    <p>
-    <%= "#{person.name} ~~~~~~" %>
-    as: <%= person.character %>
-    </p>
-  <% end %>
+<br><br>
+  <div class="container">
+    <div class="row align-items-start">
+    <section class="text-decoration-underline"><h4>Cast</h4></section>
+      <div class="col">
+        <section class="text-decoration-underline"><h6>Actor</h6></section>
+      </div>
+      <div class="col">
+        <section class="text-decoration-underline"><h6>Character</h6></section>
+      </div>
+    </div>
+    <% @cast.each do |person|%>
+      <div class="row align-items-center">
+        <div class="col">
+          <p><%= "#{person.name}" %></p>
+        </div>
+        <div class="col">
+          <p><%= person.character %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </section>
 
-<br>
-<section id="reviews">
-<% if @reviews %>
-  <h3>Reviews</h3>
-    <% @reviews.each do |review|%>
-    <p><%="There are #{@reviews.count} reviews for #{@movie.title}"  %></p>
-      <p>Author Name: <%= review.name %></p>
-      <p>Author Handle: <%= review.user_name %></p>
-      <p>Review: <%= review.content %></p>
-      <p>Rating: <%= review.rating %></p>
-      <br>
-      <br>
-    <% end %>
+<br><br>
+<% if @reviews.present? %>
+  <section id="reviews">
+    <section class="text-decoration-underline"><h4>Reviews</h4></section>
+    <section class="container">
+      <section class="row align-items-start">
+        <section class="col">
+          <section class="text-decoration-underline"><h6>Author Name/Handle</h6></section>
+        </section>
+        <section class="col">
+          <section class="text-decoration-underline"><h6>Rating</h6></section>
+        </section>
+      </section>
+      <% @reviews.each do |review|%>
+      <section class="row align-items-center">
+        <section class="col">
+          <strong><%= "#{review.name}/#{review.user_name}" %></strong>
+        </section>
+        <section class="col">
+          <strong><%= review.rating %></strong>
+        </section>
+      </section>
+  <section class="text-decoration-underline"><h6>Review</h6></section>
+  <p>Review: <%= review.content %></p>
+  <br><br>
+      <% end %>
+  </section>
+  <p>
+  </p>
   <% end %>
-</section>
+
+
