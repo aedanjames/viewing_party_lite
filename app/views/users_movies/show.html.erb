@@ -1,11 +1,10 @@
 <br>
 <section id="buttons">
-  <p><%= button_to "Create Viewing Party for #{@movie.title}", "/movies/#{@movie.id}/viewing_party/new", method: :get, class: "btn btn-primary" %><p>
+  <%= button_to "Create Viewing Party for #{@movie.title}", "/movies/#{@movie.id}/viewing_party/new", method: :get, class: "btn btn-primary btn-sm" %>
 </section><br>
 
 <section id="info">
   <h2><%= @movie.title %></h2>
-
   <p> <img src="https://image.tmdb.org/t/p/original<%= @movie.poster  %>"alt="">
 
   <section class="container">
@@ -38,7 +37,7 @@
       <section class="col">
       <br><br>
         <section class="text-decoration-underline"><h4>Summary</h4></section>
-        <%= @movie.summary %>
+        <section class ="pad"><%= @movie.summary %></section>
       </section>
     </section>
   </section>
@@ -70,6 +69,7 @@
 </section>
 
 <br><br>
+
 <% if @reviews.present? %>
   <section id="reviews">
     <section class="text-decoration-underline"><h4>Reviews</h4></section>
@@ -85,14 +85,14 @@
       <% @reviews.each do |review|%>
       <section class="row align-items-center">
         <section class="col">
-          <strong><%= "#{review.name}/#{review.user_name}" %></strong>
+          <section class ="pad"><strong><%= "#{review.name}/#{review.user_name}" %></strong></section>
         </section>
         <section class="col">
           <strong><%= review.rating %></strong>
         </section>
       </section>
   <section class="text-decoration-underline"><h6>Review</h6></section>
-  <p>Review: <%= review.content %></p>
+  <section class ="pad"><p>Review: <%= review.content %></p></section>
   <br><br>
       <% end %>
   </section>

@@ -1,5 +1,6 @@
 <section id="title">
-  <section class="p-4 mb-2 bg-dark text-white"><h1> <%= @user.name %>'s Dashboard </h1></section>
+<br>
+  <h1> <%= @user.name %>'s Dashboard </h1>
 </section>
 
 <section id="discover">
@@ -7,9 +8,11 @@
 </section>
 
 <section id="parties">
+<% if @invitations.present? %>
   <h1> My Viewing Parties </h1>
   <section id="invitations">
     <h2>My Invitations</h2>
+<% end %>
       <% @invitations.each do |party| %>
         <p>Date: <%= party.start_date%>
         <p>Time: <%= party.start_time%>
@@ -30,7 +33,11 @@
   </section>
 
   <section id="hosting">
+  <% if @host_parties.present? %>
     <h2>Hosted Parties</h2>
+  <% else %>
+    <section class = "pad">You Aren't Hosting Any Parties Yet. Discover A Movie And Create A Party!</section>
+  <% end %>
       <% @host_parties.each do |party| %>
         <p>Date: <%= party.start_date%>
         <p>Time: <%= party.start_time%>

@@ -1,4 +1,5 @@
 <section id="title">
+<br>
   <h1>Welcome to Viewing Party</h1>
 </section>
 
@@ -11,12 +12,4 @@
       <p><%= button_to 'Sign Up With Google', '/auth/google_oauth2', method: :get, class: "btn btn-primary" %><p>
     </section>
   </section>
-</section>
-
-<section id="users">
-   <% if logged_in? %> 
-    <% @users.each do |user| %>
-        <p><%= user.email %><p>
-    <% end %>
-  <% end %>
 </section>

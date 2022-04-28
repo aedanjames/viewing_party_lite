@@ -8,29 +8,49 @@
   <p><%= button_to "Top Rated Movies", movies_path, method: :get, params: {top_rated: 'top_rated'}, class: "btn btn-primary" %><p>
     </section>
 
-<section class="p-4 mb-2 bg-dark text-white"><h3>Developer's Picks </h3></section>
+<section class="card w-75">
+  <section class="card-body, btn btn-dark">
+    <h5 class="card-title">Developer's Picks</h5>
+  </section>
+</section>
+
 </section>
 
 <section class="container">
-  <section class="row align-items-start">
+  <section class="row">
     <section class="col">
     <br>
-      <%= link_to "Death Proof", "/movies/1991", method: :get, class:"link-dark" %>
-      <img src="https://image.tmdb.org/t/p/original/vtu6H4NWnQVqEp3aanUq3hNeeot.jpg">
+      <section class="shadow p-3 mb-3 rounded">
+        <%= link_to "Death Proof", "/movies/1991", method: :get, class:"link-dark" %>
+        <img src="https://image.tmdb.org/t/p/original/vtu6H4NWnQVqEp3aanUq3hNeeot.jpg">
+      </section>
     </section>
   </section>
-  <section class="row align-items-center">
+  <section class="row">
     <section class="col">
     <br>
-    <%= link_to "Gaia", "/movies/795853", method: :get, class:"link-dark" %>
-    <img src="https://image.tmdb.org/t/p/original/v8cwfPwjHDWf5s5MxvLvcfnxPLL.jpg">
+      <section class="shadow p-3 mb-3 rounded">
+        <%= link_to "Gaia", "/movies/795853", method: :get, class:"link-dark" %>
+        <img src="https://image.tmdb.org/t/p/original/v8cwfPwjHDWf5s5MxvLvcfnxPLL.jpg">
+      </section>
     </section>
   </section>
-  <section class="row align-items-end">
+  <section class="row">
     <section class="col">
     <br>
-            <%= link_to "The Platform", "/movies/619264", method: :get, class:"link-dark" %>
-      <img src="https://image.tmdb.org/t/p/original/8ZX18L5m6rH5viSYpRnTSbb9eXh.jpg">
+      <section class="shadow p-3 mb-3 rounded">
+        <%= link_to "The Platform", "/movies/619264", method: :get, class:"link-dark" %>
+        <img src="https://image.tmdb.org/t/p/original/8ZX18L5m6rH5viSYpRnTSbb9eXh.jpg">
+      </section>
+    </section>
+  </section>
+  <section class="row">
+    <section class="col">
+    <br>
+      <section class="shadow p-3 mb-3 rounded">
+        <%= link_to "Air Bud", "/movies/20737", method: :get, class:"link-dark" %>
+        <img src="https://image.tmdb.org/t/p/original/kDfzh6QdX2tseTwwyB7lp2RP7iE.jpg">
+      </section>
     </section>
   </section>
 </section>

@@ -1,18 +1,11 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+ .navbar {
+  background: #1D120C;
+}
+
+.navbar-toggler-icon{
+  background-image: image-url("toggler.png");
+}
 
  #welcome_images {
   width: 100vw;
@@ -27,8 +20,8 @@
   height: 20vw;
 }
 
- html, body {
-	background-image: image-url('/assets/background.jpg'); 
+  html, body {
+	background-image: image-url('/assets/film_background.jpg'); 
 	height: 100%;
 	width: 100%;
 	margin: 0;
@@ -38,6 +31,13 @@
 	background-attachment: fixed;
   font-family: fantasy, 'copperplate';
 }
+
+.pad {
+  padding-right: 3rem;
+  padding-left: 3rem;
+  font-family: fantasy, 'copperplate';
+}
+
 img {
   display: block;
   margin-left: auto;
@@ -46,6 +46,6 @@ img {
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-  background-color: #6f42c1 !important;
+  background-color: #9572a8 !important;
 }
 
