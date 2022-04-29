@@ -2,14 +2,14 @@
 <br>
   <h1>Welcome to Viewing Party</h1>
 </section>
-
-<section class="container">
-  <section class="row">
-    <section class="col-6">
-      <p><%= button_to 'Register', '/register', method: :get, class: "btn btn-primary" %><p>
-    </section>
-    <section class="col-5">
-      <p><%= button_to 'Sign Up With Google', '/auth/google_oauth2', method: :get, class: "btn btn-primary" %><p>
-    </section>
-  </section>
-</section>
+<br>
+<div class="container">
+  <div class="row align-items-start">
+    <div class="col">
+      <%= button_to 'Register', '/register', method: :get, class: "btn btn-primary" %>
+    </div>
+    <div class="col">
+      <%= button_to 'Sign Up With Google', '/auth/google_oauth2', method: :get, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
