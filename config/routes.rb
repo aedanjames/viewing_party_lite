@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/discover', to: 'users#discover'
   get '/movies/:id/viewing_party/new', to: 'viewing_party#new'
   post 'movies/:id/viewing_party/new', to: 'viewing_party#create'
+  delete 'viewing_party/:id', to: 'viewing_party#destroy'
 
   get '/dashboard', to: 'users#show'
 

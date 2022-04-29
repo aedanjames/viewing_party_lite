@@ -4,7 +4,7 @@ class ViewingPartyController < ApplicationController
     @users = User.all
     @host = User.find(session[:user_id])
     @movie = MovieFacade.new.details(params[:id])
-  end
+end
 
   def create
     @host = User.find(session[:user_id])
@@ -21,6 +21,12 @@ class ViewingPartyController < ApplicationController
         UserParty.create!(user_id: user_id, party_id: @party.id)
       end
     end
+    redirect_to dashboard_path
+  end
+
+  def destroy
+    party = Party.find(params[:id])
+    party.destroy
     redirect_to dashboard_path
   end
 end

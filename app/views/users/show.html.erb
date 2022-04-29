@@ -23,11 +23,13 @@
             <p><b><%= user.name %></b></p>
           <% else %>
             <p><%= user.name %></p>
+            <% binding.pry %>
           <% end %>
         <% end %>
       <% end %>
       <% @not_hosted_movies.each do |movie| %>
       <p>Movie: <%= link_to "#{movie.title}", "/movies/#{movie.id}", class:"link-dark"  %></p>
+      <% binding.pry %>
       <p> <img src="https://image.tmdb.org/t/p/original<%= movie.poster  %>"alt="">
     <% end %>
   </section>
@@ -45,6 +47,7 @@
         <p><% party.users.each do |user| %>
           <% if user.id == party.host_id %>
             <p>You are the host of this party! <%= user.name %></p>
+            <%= button_to 'Cancel Party', "/viewing_party/#{party.id}", method: :delete, class: "btn btn-danger" %><br>
           <% else %>
             <p><%= user.name %></p>
           <% end %>
