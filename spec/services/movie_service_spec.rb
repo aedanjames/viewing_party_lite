@@ -57,5 +57,15 @@ RSpec.describe 'The Movie Service' do
         expect(reviews.first[:author_details][:rating]).to be_instance_of(Float)
       end 
     end
+
+    it ".get_providers" do
+      VCR.use_cassette('get_providers') do
+        provider = MovieService.get_providers(619264)
+        expect(provider).to be_a Hash
+        expect(provider[:link]).to be_a String
+        expect(provider[:flatrate][0][:logo_path]).to be_a String
+        expect(provider[:flatrate][0][:provider_name]).to be_a String
+      end 
+    end
   end
 end

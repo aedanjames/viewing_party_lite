@@ -14,6 +14,7 @@ class UsersMoviesController < ApplicationController
 
   def show
     @movie = MovieFacade.new.details(params[:id])
+    @providers = MovieFacade.new.providers(params[:id])
     @cast = MovieFacade.new.cast(params[:id])
     @reviews = MovieFacade.new.reviews(params[:id])
   end

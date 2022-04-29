@@ -25,9 +25,13 @@ class MovieService
 
   def self.get_cast(movie_id)
     get_url("movie/#{movie_id}/credits")[:cast]
-  end 
+  end
 
   def self.get_reviews(movie_id)
     get_url("movie/#{movie_id}/reviews")[:results]
-  end 
+  end
+
+  def self.get_providers(movie_id)
+    get_url("movie/#{movie_id}/watch/providers")[:results][:US]
+  end
 end

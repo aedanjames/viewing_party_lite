@@ -26,4 +26,8 @@ class MovieFacade
         MovieReview.new(data)
       end
     end 
+
+    def providers(movie_id)
+      MovieProvider.new(MovieService.get_providers(movie_id))
+    end 
 end

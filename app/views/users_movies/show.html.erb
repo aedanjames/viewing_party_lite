@@ -7,6 +7,28 @@
   <h2><%= @movie.title %></h2>
   <p> <img src="https://image.tmdb.org/t/p/original<%= @movie.poster  %>"alt="">
 
+
+<div class="card" style="width: 35rem;">
+  <div class="card-body">
+    <h5 class="card-title">Available On</h5>
+     <section class="card-text">
+      <% @providers.logo.each_with_index do |logo, logo_index| %>
+      <% @providers.provider_name.each_with_index do |name, name_index| %>
+        <%if name_index == logo_index %>
+          <section id="horizontal">
+            <%="#{name}"%>
+            <section class="link"><img src="https://image.tmdb.org/t/p/original<%= logo %>"></section>
+          </section>
+        <% end %>
+      <% end %>
+      <% end %>
+      <br>
+      <a href="<%= @providers.link %>" class="btn btn-primary">JustWatch</a>
+  </section>
+</section>
+        
+
+<br>
   <section class="container">
   <section class="row align-items-start">
     <section class="col">
