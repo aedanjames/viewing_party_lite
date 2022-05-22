@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
   has_secure_password
 
+  has_one_attached :avatar
+
   def is_host
     parties.where(host_id: id)
   end 

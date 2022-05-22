@@ -19,6 +19,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    binding.pry
+    upload = Cloudinary::Uploader.upload(params[:user][:avatar])
+    # the url for the image
+    avatar_url = upload["url"]
+    binding.pry
     if @user.save
       session[:user_id] = @user.id
       redirect_to dashboard_path

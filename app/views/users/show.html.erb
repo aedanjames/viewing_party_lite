@@ -29,7 +29,6 @@
       <% end %>
       <% @not_hosted_movies.each do |movie| %>
       <p>Movie: <%= link_to "#{movie.title}", "/movies/#{movie.id}", class:"link-dark"  %></p>
-      <% binding.pry %>
       <p> <img src="https://image.tmdb.org/t/p/original<%= movie.poster  %>"alt="">
     <% end %>
   </section>
