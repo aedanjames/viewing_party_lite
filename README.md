@@ -1,12 +1,11 @@
 # Viewing Party
 
-### Table of Contents
+## Table of Contents
 
-- About The Project
-- Database Design
-- Getting Started
-- Built With
-- Testing
+- [About The Project](#about-the-project)
+- [Database Design](#database-design)
+- [Configuration](#configuration)
+- [Developers](#developers)
 
 ## About The Project
 
@@ -19,7 +18,7 @@
 
 ## Database Design
 
-[![viewing-party-DBdesign.png](https://i.postimg.cc/nVBx07bL/viewing-party-DBdesign.png)](https://postimg.cc/z3z4fyfm)
+[viewing-party.png](https://postimg.cc/TpY0zscg)
 
 ## Configuration 
 |             |               |               |               |
